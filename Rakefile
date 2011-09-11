@@ -23,7 +23,7 @@ end
 
 desc "Install bundles"
 task :install_bundles do
-  system "vim +BundleInstall! +BundleClean +qa -"
+  system "vim +BundleInstall! +BundleClean +qa"
 end
 
 task :default => [
