@@ -24,9 +24,16 @@ task :get_vundle do
     system "git clone http://github.com/gmarik/vundle.git #{dest}/vundle"
   end
 end
+
+desc "Install bundles"
+task :install_bundles do
+  system "vim +BundleInstall! +BundleClean +q -"
+end
+
 task :default => [
   :link_vim_files,
-  :get_vundle
+  :get_vundle,
+  :install_bundles
 ]
 
 desc "Clear out all build artifacts and rebuild the latest Janus"
