@@ -8,10 +8,6 @@ task :link_vim_files do
   end
 end
 
-task :clean do
-  system "git clean -dfx"
-end
-
 desc "Pull the latest"
 task :pull do
   system "git pull"
@@ -36,5 +32,5 @@ task :default => [
   :install_bundles
 ]
 
-desc "Clear out all build artifacts and rebuild the latest Janus"
-task :upgrade => [:clean, :pull, :default]
+desc "Upgrade vimfiles"
+task :upgrade => [:pull, :default]
