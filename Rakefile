@@ -24,7 +24,7 @@ end
 desc "Install bundles"
 task :install_bundles do
   bundles_file = File.expand_path("~/.vim/bundles.vim")
-  system "vim -u #{bundles_file} +BundleInstall! +BundleClean +qa"
+  system "vim -u #{bundles_file} +BundleInstall! +BundleClean +qa -"
 end
 
 task :default => [
