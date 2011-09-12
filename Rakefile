@@ -8,11 +8,6 @@ task :link_vim_files do
   end
 end
 
-desc "Pull the latest"
-task :pull do
-  system "git pull"
-end
-
 desc "Getting the latest vundle"
 task :get_vundle do
   dest = File.expand_path("~/.vim/bundle")
@@ -32,6 +27,3 @@ task :default => [
   :get_vundle,
   :install_bundles
 ]
-
-desc "Upgrade vimfiles"
-task :upgrade => [:pull, :default]
