@@ -1,69 +1,66 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-filetype off
+
+source ~/.vim/bundles.vim
+
 let mapleader = ","
 
-" Security
-set modelines=0  " Disable modelines in files [http://www.guninski.com/vim1.html]
 
-" Load vundle to manage other plugins
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-" Bundles
-Bundle 'gmarik/vundle'
-Bundle 'mileszs/ack.vim'
+" Plugin settings
+" ===============
+
+" Ack
 map <leader>f :Ack 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'tpope/vim-endwise' 
-Bundle 'atourino/jinja.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'msanders/snipmate.vim'
+
+" Snipmate
 let g:snippets_dir = $HOME.'/.vim/snippets/'
-Bundle 'ervandew/supertab'
+
+" Supertab
 let g:SuperTabDefaultCompletionType = "context"
-Bundle 'scrooloose/syntastic'
+
+" Syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_auto_jump=0
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_disabled_filetypes = ['html']
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-ragtag'
+
+" Ragtag
 let g:ragtag_global_maps = 1
-Bundle 'tpope/vim-repeat'
-Bundle 'hallison/vim-ruby-sinatra'
-Bundle 'tpope/vim-surround'
-Bundle 'chrismetcalf/vim-yankring'
+
+" Yankring
 nnoremap <silent> <F3> :YRShow<cr>
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'Lokaltog/vim-easymotion'
+
+" Easymotion
 let g:EasyMotion_leader_key = '<Leader>m'
-Bundle 'majutsushi/tagbar'
+
+" Tagbar
 nnoremap <silent> <F9> :TagbarToggle<CR>
-Bundle 'mattn/gist-vim'
+
+" Gist
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
-Bundle 'godlygeek/tabular'
+
+" Tabular
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>aa :Tabularize /=><CR>
 vmap <Leader>aa :Tabularize /=><CR>
-Bundle 'vim-scripts/ZoomWin'
-nnoremap <silent> <Leader><Leader> :ZoomWin<CR>
-"Bundle 'vim-scripts/LustyExplorer'
-Bundle 'sjbach/lusty'
 
-" Editing behaviour
-filetype on                     " set filetype stuff to on
-filetype plugin on
-filetype indent on
+" ZoomWin
+nnoremap <silent> <Leader><Leader> :ZoomWin<CR>
+
+
+
+
+" General Customizations
+" ======================
+
+" Security
+set modelines=0  " Disable modelines in files [http://www.guninski.com/vim1.html]
+
 
 " Basic Options
 set autoindent                 " Copy indent of prev line to the new line
@@ -269,7 +266,7 @@ endif
 
 
 " GUI
-" ---
+" ===
 
 if has('gui_running')
 
