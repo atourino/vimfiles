@@ -95,6 +95,8 @@ set undolevels=1000            " 1000 undos
 set virtualedit=all            " Allow the cursor to go in to 'invalid' places
 set nowildmenu                   " Enhanced mode for command completion
 set hidden
+set splitright
+set splitbelow
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
