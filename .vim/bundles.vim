@@ -29,6 +29,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/gist-vim'
 Bundle 'godlygeek/tabular'
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'othree/html5.vim'
 Bundle 'bufexplorer.zip'
 
 
