@@ -9,7 +9,7 @@ let mapleader = ","
 " ===============
 
 " Ack
-map <leader>f :Ack 
+map <leader>f :Ack! 
 
 " Snipmate
 let g:snippets_dir = $HOME.'/.vim/snippets/'
