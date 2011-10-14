@@ -34,6 +34,7 @@ nnoremap <silent> <F3> :YRShow<cr>
 let g:EasyMotion_leader_key = '<Leader>m'
 
 " Tagbar
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 nnoremap <silent> <F9> :TagbarToggle<CR>
 
 " Gist
