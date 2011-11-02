@@ -53,7 +53,8 @@ vmap <Leader>aa :Tabularize /=><CR>
 " ZoomWin
 nnoremap <silent> <Leader><Leader> :ZoomWin<CR>
 
-
+" Scratch
+nnoremap <silent> <Leader>s :Sscratch<CR>
 
 
 " General Customizations
@@ -290,9 +291,8 @@ endif
 " Filetypes. These should really be in their own files...
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
-au BufNewFile,BufRead *.mustache        setf mustache
+autocmd FileType coffee setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-
 
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local

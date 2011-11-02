@@ -31,7 +31,10 @@ Bundle 'mattn/gist-vim'
 Bundle 'godlygeek/tabular'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'othree/html5.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'Raimondi/delimitMate'
 Bundle 'bufexplorer.zip'
+Bundle 'scratch.vim'
 
 
 filetype plugin indent on
