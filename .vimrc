@@ -137,6 +137,9 @@ nmap <leader>l :set list!<CR>
 set noerrorbells
 set t_vb=                      " Set visual bell to nothing
 set visualbell
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
 
 " Use the 'hjkl' keys
 nnoremap <up> <Nop>
@@ -274,10 +277,15 @@ endif
 
 if has('gui_running')
 
-    "set guifont=Liberation_Mono_Regular:h12.00 " Font
-    set guifont=Inconsolata:h12.00             " Font
-    set go-=T                                  " No toolbar
+    if has('win32')
+        set guifont=Consolas:h10             " Font
+    else
+        "set guifont=Liberation_Mono_Regular:h12.00 " Font
+        set guifont=Inconsolata:h12.00             " Font
+    endif
     set clipboard=unnamed                      " Use the clipboard register '*' for all yank, delete, change and put operations
+    set go-=m                                  " No menubar
+    set go-=T                                  " No toolbar
 
     " Hide scrollbars
     set go-=l
