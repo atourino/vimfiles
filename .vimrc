@@ -279,6 +279,7 @@ if has('gui_running')
 
     if has('win32')
         set guifont=Consolas:h10             " Font
+        au GUIEnter * simalt ~x
     else
         "set guifont=Liberation_Mono_Regular:h12.00 " Font
         set guifont=Inconsolata:h12.00             " Font
