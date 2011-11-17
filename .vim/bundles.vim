@@ -13,7 +13,11 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-endwise' 
 Bundle 'atourino/jinja.vim'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'msanders/snipmate.vim'
+" vim-snipmate depends on the preceeding bundles
+Bundle 'MarcWeber/vim-addon-mw-utils.git'
+Bundle 'tomtom/tlib_vim.git'
+Bundle 'garbas/vim-snipmate'
+" vim-snipmate depends on the preceeding bundles
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
@@ -33,6 +37,10 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'othree/html5.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Raimondi/delimitMate'
+Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/vimplenote-vim'
+
 Bundle 'bufexplorer.zip'
 Bundle 'scratch.vim'
 
