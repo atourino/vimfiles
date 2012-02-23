@@ -40,6 +40,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/vimplenote-vim'
+Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'bufexplorer.zip'
 Bundle 'scratch.vim'

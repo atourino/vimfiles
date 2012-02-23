@@ -286,7 +286,7 @@ if has('gui_running')
         au GUIEnter * simalt ~x
     else
         "set guifont=Liberation_Mono_Regular:h12.00 " Font
-        set guifont=Inconsolata:h12.00             " Font
+        set guifont=Inconsolata-dz\ for\ Powerline:h10.00             " Font
     endif
     set clipboard=unnamed                      " Use the clipboard register '*' for all yank, delete, change and put operations
     set go-=m                                  " No menubar
