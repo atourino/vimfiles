@@ -107,10 +107,6 @@ set completeopt=longest,menu
 set wildmode=list:longest,list:full
 
 
-
-" Shouldn't need shift
-nnoremap ; :
-
 " Search
 nnoremap / /\v
 vnoremap / /\v
