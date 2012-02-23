@@ -33,8 +33,6 @@ Bundle 'othree/html5.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Raimondi/delimitMate'
 Bundle 'mattn/zencoding-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/vimplenote-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'SirVer/ultisnips'
 
