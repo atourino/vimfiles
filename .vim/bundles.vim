@@ -35,6 +35,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'mattn/zencoding-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'SirVer/ultisnips'
+Bundle 'kien/ctrlp.vim'
 
 Bundle 'bufexplorer.zip'
 Bundle 'scratch.vim'

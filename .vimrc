@@ -62,6 +62,9 @@ nnoremap <silent> <Leader><Leader> :ZoomWin<CR>
 " Scratch
 nnoremap <silent> <Leader>s :Sscratch<CR>
 
+" Ctrl+P
+let g:ctrlp_map = '<Leader>p'
+
 
 " General Customizations
 " ======================
