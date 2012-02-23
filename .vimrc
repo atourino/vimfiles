@@ -182,6 +182,13 @@ if &t_Co > 2 || has('gui_running')
    syntax on                    " switch syntax highlighting on, when the terminal has colors
 endif
 
+" Highlight column 80. Used in certain style guidelines
+if exists('+colorcolumn')
+    set colorcolumn=80
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 " No Help, please
 nmap <F1> <Esc>
 
