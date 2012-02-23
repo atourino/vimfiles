@@ -11,8 +11,13 @@ let mapleader = ","
 " Ack
 map <leader>f :Ack! 
 
-" Snipmate
-let g:snippets_dir = $HOME.'/.vim/snippets/'
+" UltiSnips
+let g:UltiSnipsSnippetsDir = $HOME.'/.vim/snippets/'
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
