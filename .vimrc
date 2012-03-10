@@ -28,6 +28,7 @@ let g:syntastic_auto_loc_list=2
 let g:syntastic_auto_jump=0
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_disabled_filetypes = ['html']
+let g:syntastic_phpcs_disable = 1
 nmap <silent> <Leader>q :Errors<CR>
 
 " Ragtag
