@@ -44,11 +44,6 @@ let g:EasyMotion_leader_key = '<Leader>m'
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 nnoremap <silent> <F9> :TagbarToggle<CR>
 
-" Gist
-let g:gist_clip_command = 'pbcopy'
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
 " Tabular
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
