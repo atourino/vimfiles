@@ -10,6 +10,7 @@ let mapleader = ","
 
 " Ack
 map <leader>f :Ack! 
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " UltiSnips
 let g:UltiSnipsSnippetsDir = $HOME.'/.vim/snippets/'
@@ -55,12 +56,17 @@ vmap <Leader>aa :Tabularize /=><CR>
 " ZoomWin
 nnoremap <silent> <Leader><Leader> :ZoomWin<CR>
 
-" Scratch
-nnoremap <silent> <Leader>s :Sscratch<CR>
-
 " Ctrl+P
 let g:ctrlp_map = '<Leader>p'
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_working_path_mode = 'rc'
 
+" Scratch.vim
+nmap <silent> <Leader>s :Sscratch<CR>
+
+" PIV
+let g:DisableAutoPHPFolding = 1
 
 " General Customizations
 " ======================

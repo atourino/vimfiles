@@ -10,4 +10,12 @@ snippet ddate "ddate"
 `!v strftime("%B %d, %Y")`
 endsnippet
 
-
+snippet tphead "tphead"
+{
+ "title":"${1:Sin titulo}",
+ "date" : "`!v strftime("%d-%m-%Y")`",
+ "slug" : "${2:nuevo-slug}",
+ "author" : "Antonio Touriño",
+ "tag" : "$3"
+}
+endsnippet
