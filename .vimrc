@@ -205,7 +205,19 @@ nmap <F1> <Esc>
 map <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:let @/=''<CR>
 
 " Clean whitespace
-map <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+map <leader>W :call <SID>StripTrailingWhitespaces()<CR>
+autocmd BufWritePre *.vim,*.py,*.js,*.css,*.php,*.html,*.sass :call <SID>StripTrailingWhitespaces()
 
 " Faster Esc
 inoremap <Esc> <nop>
