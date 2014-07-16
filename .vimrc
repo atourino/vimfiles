@@ -1,7 +1,7 @@
 
 source ~/.vim/bundles.vim
 
-let mapleader = ","
+let mapleader = " "
 
 
 
@@ -9,16 +9,17 @@ let mapleader = ","
 " ===============
 
 " Ack
-map <leader>f :Ack! 
+map <leader>f :Ack!
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " UltiSnips
-let g:UltiSnipsSnippetsDir = $HOME.'/.vim/snippets/'
+let g:snips_author = 'Antonio Touriño'
+let g:UltiSnipsSnippetsDir = $HOME.'/.vim/UltiSnips/'
 let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
@@ -29,8 +30,12 @@ let g:syntastic_auto_loc_list=2
 let g:syntastic_auto_jump=0
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_disabled_filetypes = ['html']
-let g:syntastic_phpcs_disable = 1
+let g:syntastic_mode_map = { 'mode' : 'passive',
+                           \ 'active_filetypes' : [],
+                           \ 'passive_filetypes' : [] }
 nmap <silent> <Leader>q :Errors<CR>
+nmap <silent> <Leader>st :SyntasticToggleMode<CR>
+nmap <silent> <Leader>sc :SyntasticCheck<CR>
 
 " Ragtag
 let g:ragtag_global_maps = 1
@@ -39,7 +44,7 @@ let g:ragtag_global_maps = 1
 nnoremap <silent> <F3> :YRShow<cr>
 
 " Easymotion
-let g:EasyMotion_leader_key = '<Leader>m'
+let g:EasyMotion_leader_key = '<Leader><Leader>'
 
 " Tagbar
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
@@ -54,19 +59,37 @@ nmap <Leader>aa :Tabularize /=><CR>
 vmap <Leader>aa :Tabularize /=><CR>
 
 " ZoomWin
-nnoremap <silent> <Leader><Leader> :ZoomWin<CR>
+nnoremap <silent> <Leader>z :ZoomWin<CR>
 
 " Ctrl+P
 let g:ctrlp_map = '<Leader>p'
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-let g:ctrlp_working_path_mode = 'rc'
+let g:ctrlp_working_path_mode = 'rw'
 
 " Scratch.vim
 nmap <silent> <Leader>s :Sscratch<CR>
 
 " PIV
 let g:DisableAutoPHPFolding = 1
+
+" Airline
+let g:airline_powerline_fonts = 1
+
+" Investigate.vim
+let g:investigate_use_dash = 1
+nnoremap <leader>K :call investigate#Investigate()<CR>
+
+" Bufstop
+map <leader>b :Bufstop<CR>             " get a visual on the buffers
+map <leader>v :BufstopModeFast<CR>     " a command for quick switching
+map <C-tab>   :BufstopBack<CR>
+map <S-tab>   :BufstopForward<CR>
+let g:BufstopAutoSpeedToggle = 1       " now I can press ,3,3,3 to cycle the last 3 buffers
+
+" YouCompleteMe
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 
 " General Customizations
 " ======================
@@ -83,7 +106,7 @@ set backspace=indent,eol,start " Allow backspacing over everything in insert mod
 set cmdheight=2                " Command line two lines high
 set encoding=utf-8             " Use UTF-8 encoding
 set history=50                 " Keep 50 lines of command line history
-set linebreak                  " 
+set linebreak
 set more                       " Use more prompt
 set nobackup                   " Don't back anything up. Use git.
 set nowritebackup              " Ditto
@@ -97,6 +120,7 @@ if exists("+relativenumber")
     nnoremap <silent> <Leader>n :set number<CR>
 endif
 set number                     " Enable line numbering
+set relativenumber
 set ruler                      " Show the line and column number of the cursor position, separated by a comma.
 set scrolloff=5                " Keep at least 5 lines above/below
 set showcmd                    " Display incomplete commands on last line of screen
@@ -125,7 +149,7 @@ set ignorecase                 " Case insensitive
 set incsearch                  " Do incremental searching
 set smartcase                  " Override the 'ignorecase' option if the search pattern contains upper case characters.
 set gdefault                   " Make search global (line)
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <F4> :nohlsearch<Bar>:echo<CR>
 nmap <tab> %
 vmap <tab> %
 
@@ -173,7 +197,7 @@ if has('statusline')
             \"%{'~'[&pm=='']}"              .
             \"%{exists('g:loaded_fugitive')?fugitive#statusline():''}" .
             \"%="                           .
-            \"#%n %l/%L,%c%V "              
+            \"#%n %l/%L,%c%V "
   endfunc
   call SetStatusLineStyle()
 
