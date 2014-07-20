@@ -37,6 +37,9 @@ nmap <silent> <Leader>q :Errors<CR>
 nmap <silent> <Leader>st :SyntasticToggleMode<CR>
 nmap <silent> <Leader>sc :SyntasticCheck<CR>
 
+" Vim search pulse
+let g:vim_search_pulse_mode = 'pattern'
+
 " Ragtag
 let g:ragtag_global_maps = 1
 

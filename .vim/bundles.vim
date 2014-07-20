@@ -40,6 +40,7 @@ Bundle 'mihaifm/bufstop'
 Bundle 'wellle/targets.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'saihoooooooo/glowshi-ft.vim'
+Bundle 'inside/vim-search-pulse'
 
 Bundle 'scratch.vim'
 Bundle 'bufexplorer.zip'
