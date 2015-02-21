@@ -13,6 +13,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " UltiSnips
 let g:snips_author = 'Antonio Touriño'
+let g:snips_email = 'at@brilliancetech.com'
 let g:UltiSnipsSnippetsDir = $HOME.'/.vim/UltiSnips/'
 let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -151,6 +152,9 @@ set gdefault                   " Make search global (line)
 nnoremap <silent> <F4> :nohlsearch<Bar>:echo<CR>
 nmap <tab> %
 vmap <tab> %
+" Keeps search hit in center of screen
+nnoremap n nzz
+nnoremap N Nzz
 
 " Tabs/spaces
 set expandtab
@@ -184,6 +188,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " Always display the status line and format it
 set laststatus=2
@@ -266,6 +274,12 @@ au FocusLost * :wa
 
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
+
+" Move lines up or down
+nnoremap <leader>lj :m .+1<CR>==
+nnoremap <leader>lk :m .-2<CR>==
+vnoremap <leader>lj :m '>+1<CR>gv=gv
+vnoremap <leader>lk :m '<-2<CR>gv=gv''
 
 " Try to get the correct main terminal type
 if &term =~ "xterm"
