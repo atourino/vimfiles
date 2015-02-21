@@ -108,14 +108,10 @@ snippet doc_h "doc_h"
 /**
  * ${1}
  *
- * @author ${2:`!v g:snips_author`}
- * @version ${3:$Id$}
- * @copyright ${4:$2}, `!v strftime('%d %B, %Y')`
- * @package ${5:default}
+ * @author    ${2:`!v g:snips_author` <`!v g:snips_email`>}
+ * @copyright `!v strftime('%Y')` ${4:`!v g:snips_author`}
+ * @package   ${5:Brilliance}
  **/
-/**
- * Define DocBlock
- */
 endsnippet
 
 snippet def "def"
