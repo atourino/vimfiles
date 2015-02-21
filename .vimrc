@@ -1,8 +1,7 @@
 
 source ~/.vim/bundles.vim
 
-let mapleader = " "
-
+let mapleader = "\<Space>"
 
 
 " Plugin settings
