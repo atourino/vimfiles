@@ -7,6 +7,9 @@ let mapleader = "\<Space>"
 " Plugin settings
 " ===============
 
+" NeoComplete
+let g:neocomplete#enable_at_startup = 1
+
 " Ack
 map <leader>f :Ack!
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -49,10 +52,6 @@ nmap s <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-
-" Tagbar
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-nnoremap <silent> <F9> :TagbarToggle<CR>
 
 " Tabular
 nmap <Leader>a= :Tabularize /=<CR>
