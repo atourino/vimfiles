@@ -40,9 +40,6 @@ nmap <silent> <Leader>sc :SyntasticCheck<CR>
 " Vim search pulse
 let g:vim_search_pulse_mode = 'pattern'
 
-" Ragtag
-let g:ragtag_global_maps = 1
-
 " Yankring
 nnoremap <silent> <F3> :YRShow<cr>
 
@@ -73,9 +70,6 @@ let g:ctrlp_working_path_mode = 0
 " Scratch.vim
 nmap <silent> <Leader>s :Sscratch<CR>
 
-" PIV
-let g:DisableAutoPHPFolding = 1
-
 " Airline
 let g:airline_powerline_fonts = 1
 
@@ -84,10 +78,7 @@ let g:investigate_use_dash = 1
 nnoremap <leader>K :call investigate#Investigate()<CR>
 
 " Bufstop
-map <leader>b :Bufstop<CR>             " get a visual on the buffers
-map <leader>v :BufstopModeFast<CR>     " a command for quick switching
-map <C-tab>   :BufstopBack<CR>
-map <S-tab>   :BufstopForward<CR>
+map <leader>b :BufstopFast<CR>             " get a visual on the buffers
 let g:BufstopAutoSpeedToggle = 1       " now I can press ,3,3,3 to cycle the last 3 buffers
 
 " General Customizations
