@@ -249,7 +249,7 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 map <leader>W :call <SID>StripTrailingWhitespaces()<CR>
-autocmd BufWritePre *.vim,*.py,*.js,*.css,*.php,*.html,*.sass :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.vim,*.py,*.js,*.css,*.php,*.html,*.sass,*.twig :call <SID>StripTrailingWhitespaces()
 
 " Faster Esc
 inoremap <Esc> <nop>
@@ -345,7 +345,7 @@ if has('gui_running')
         au GUIEnter * simalt ~x
     else
         "set guifont=Liberation_Mono_Regular:h12.00 " Font
-        set guifont=Inconsolata-dz\ for\ Powerline:h10.00             " Font
+        "set guifont=Inconsolata-dz\ for\ Powerline:h10.00             " Font
     endif
     set clipboard=unnamed                      " Use the clipboard register '*' for all yank, delete, change and put operations
     set go-=m                                  " No menubar
