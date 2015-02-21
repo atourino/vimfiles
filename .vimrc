@@ -24,14 +24,11 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let g:SuperTabDefaultCompletionType = "context"
 
 " Syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:syntastic_auto_jump=0
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_disabled_filetypes = ['html']
-let g:syntastic_mode_map = { 'mode' : 'passive',
+let g:syntastic_mode_map = { 'mode' : 'active',
                            \ 'active_filetypes' : [],
                            \ 'passive_filetypes' : [] }
+let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2', 'phpmd']
 nmap <silent> <Leader>q :Errors<CR>
 nmap <silent> <Leader>st :SyntasticToggleMode<CR>
 nmap <silent> <Leader>sc :SyntasticCheck<CR>
@@ -46,7 +43,11 @@ let g:ragtag_global_maps = 1
 nnoremap <silent> <F3> :YRShow<cr>
 
 " Easymotion
-let g:EasyMotion_leader_key = '<Leader><Leader>'
+let g:EasyMotion_do_mapping = 0 " Disable default mappings"
+nmap s <Plug>(easymotion-s)
+let g:EasyMotion_smartcase = 1
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " Tagbar
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
@@ -67,7 +68,7 @@ nnoremap <silent> <Leader>z :ZoomWin<CR>
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_working_path_mode = 0
 
 " Scratch.vim
 nmap <silent> <Leader>s :Sscratch<CR>
@@ -88,10 +89,6 @@ map <leader>v :BufstopModeFast<CR>     " a command for quick switching
 map <C-tab>   :BufstopBack<CR>
 map <S-tab>   :BufstopForward<CR>
 let g:BufstopAutoSpeedToggle = 1       " now I can press ,3,3,3 to cycle the last 3 buffers
-
-" YouCompleteMe
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
 
 " General Customizations
 " ======================
