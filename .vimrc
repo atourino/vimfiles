@@ -173,15 +173,21 @@ nnoremap <right> <Nop>
 nnoremap j gj
 nnoremap k gk
 
-" Easy window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+" <tab> / <s-tab> | Circular windows navigation
+nnoremap <tab>   <c-w>w
+nnoremap <S-tab> <c-w>W
 
-" Move visual block
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+" Moving lines
+nnoremap <silent> <C-k> :execute ':move '.max([0,         line('.') - 2])<cr>
+nnoremap <silent> <C-j> :execute ':move '.min([line('$'), line('.') + 1])<cr>
+nnoremap <silent> <C-h> <<
+nnoremap <silent> <C-l> >>
+xnoremap <silent> <C-k> :<C-U>execute 'normal! gv:move '.max([0,         line("'<") - 2])."\n"<cr>gv
+xnoremap <silent> <C-j> :<C-U>execute 'normal! gv:move '.min([line('$'), line("'>") + 1])."\n"<cr>gv
+xnoremap <silent> <C-h> <gv
+xnoremap <silent> <C-l> >gv
+xnoremap < <gv
+xnoremap > >gv
 
 " Always display the status line and format it
 set laststatus=2
