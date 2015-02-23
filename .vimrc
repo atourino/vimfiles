@@ -7,6 +7,14 @@ let mapleader = "\<Space>"
 " Plugin settings
 " ===============
 
+" vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" EasyAlign
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 " NeoComplete
 let g:neocomplete#enable_at_startup = 1
 
