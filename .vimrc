@@ -15,9 +15,6 @@ vmap <C-v> <Plug>(expand_region_shrink)
 vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" NeoComplete
-let g:neocomplete#enable_at_startup = 1
-
 " Ack
 map <leader>f :Ack!
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -58,22 +55,30 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-" Tabular
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-nmap <Leader>aa :Tabularize /=><CR>
-vmap <Leader>aa :Tabularize /=><CR>
-
 " ZoomWin
 nnoremap <silent> <Leader>z :ZoomWin<CR>
 
-" Ctrl+P
-let g:ctrlp_map = '<Leader>p'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-let g:ctrlp_working_path_mode = 0
+" fzf
+set rtp+=~/.fzf
+nnoremap <silent> <Leader><Leader> :FZF -m<CR>
+
+function! BufList()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! BufOpen(e)
+  execute 'buffer '. matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader><Enter> :call fzf#run({
+\   'source':      reverse(BufList()),
+\   'sink':        function('BufOpen'),
+\   'options':     '+m',
+\   'tmux_height': '40%'
+\ })<CR>
 
 " Scratch.vim
 nmap <silent> <Leader>s :Sscratch<CR>
@@ -84,10 +89,6 @@ let g:airline_powerline_fonts = 1
 " Investigate.vim
 let g:investigate_use_dash = 1
 nnoremap <leader>K :call investigate#Investigate()<CR>
-
-" Bufstop
-map <leader>b :BufstopFast<CR>             " get a visual on the buffers
-let g:BufstopAutoSpeedToggle = 1       " now I can press ,3,3,3 to cycle the last 3 buffers
 
 " General Customizations
 " ======================
@@ -113,12 +114,7 @@ set numberwidth=5              " Width of number column
 set pastetoggle=<F2>           " When in insert mode, press <F2> to go to
                                "    paste mode, where you can paste mass data
                                "    that won't be autoindented
-if exists("+relativenumber")
-    nnoremap <silent> <Leader>r :set relativenumber<CR>
-    nnoremap <silent> <Leader>n :set number<CR>
-endif
 set number                     " Enable line numbering
-set relativenumber
 set ruler                      " Show the line and column number of the cursor position, separated by a comma.
 set scrolloff=5                " Keep at least 5 lines above/below
 set showcmd                    " Display incomplete commands on last line of screen
@@ -132,6 +128,10 @@ set nowildmenu                   " Enhanced mode for command completion
 set hidden
 set splitright
 set splitbelow
+set nocursorcolumn
+set nocursorline
+set norelativenumber
+syntax sync minlines=256
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
@@ -221,6 +221,7 @@ endif
 if &t_Co >= 256 || has('gui_running')
    set background=dark
    colorscheme solarized
+   " colorscheme seti
 endif
 
 if &t_Co > 2 || has('gui_running')
@@ -367,7 +368,6 @@ endif
 " Filetypes. These should really be in their own files...
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType coffee setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 if filereadable(expand("~/.vimrc.local"))
