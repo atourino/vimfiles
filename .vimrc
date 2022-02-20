@@ -33,6 +33,7 @@ endfunction
 
 " Airline
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'tender'
 
 " Investigate.vim
 let g:investigate_use_dash = 1
@@ -168,7 +169,7 @@ endif
 " Highlighting
 if &t_Co >= 256 || has('gui_running')
    set background=dark
-   colorscheme nord
+   colorscheme tender
 endif
 
 if &t_Co > 2 || has('gui_running')
