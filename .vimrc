@@ -7,46 +7,11 @@ let mapleader = "\<Space>"
 " Plugin settings
 " ===============
 
-" vim-expand-region
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-
-" EasyAlign
-vmap <Enter> <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-" Ack
-map <leader>f :Ack!
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-" UltiSnips
-let g:snips_author = 'Antonio Touriño'
-let g:snips_email = 'at@brilliancetech.com'
-let g:UltiSnipsSnippetsDir = $HOME.'/.vim/UltiSnips/'
-let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
 
-" Syntastic
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_mode_map = { 'mode' : 'active',
-                           \ 'active_filetypes' : [],
-                           \ 'passive_filetypes' : [] }
-let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2', 'phpmd']
-nmap <silent> <Leader>q :Errors<CR>
-nmap <silent> <Leader>st :SyntasticToggleMode<CR>
-nmap <silent> <Leader>sc :SyntasticCheck<CR>
-
 " Vim search pulse
 let g:vim_search_pulse_mode = 'pattern'
-
-" Yankring
-nnoremap <silent> <F3> :YRShow<cr>
 
 " Easymotion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings"
@@ -54,13 +19,6 @@ nmap s <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-
-" ZoomWin
-nnoremap <silent> <Leader>z :ZoomWin<CR>
-
-" fzf
-set rtp+=~/.fzf
-nnoremap <silent> <Leader><Leader> :FZF -m<CR>
 
 function! BufList()
   redir => ls
@@ -72,16 +30,6 @@ endfunction
 function! BufOpen(e)
   execute 'buffer '. matchstr(a:e, '^[ 0-9]*')
 endfunction
-
-nnoremap <silent> <Leader><Enter> :call fzf#run({
-\   'source':      reverse(BufList()),
-\   'sink':        function('BufOpen'),
-\   'options':     '+m',
-\   'tmux_height': '40%'
-\ })<CR>
-
-" Scratch.vim
-nmap <silent> <Leader>s :Sscratch<CR>
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -124,7 +72,7 @@ set sidescrolloff=5            " Keep at least 5 lines left/right
 set title                      " Sets the terminal's title
 set undolevels=1000            " 1000 undos
 set virtualedit=all            " Allow the cursor to go in to 'invalid' places
-set nowildmenu                   " Enhanced mode for command completion
+set nowildmenu                 " Enhanced mode for command completion
 set hidden
 set splitright
 set splitbelow
@@ -201,7 +149,7 @@ xnoremap > >gv
 set laststatus=2
 if has('statusline')
   function! SetStatusLineStyle()
-    let &stl="%{SyntasticStatuslineFlag()} %f %y "                       .
+    let &stl="%f %y "                       .
             \"%([%R%M]%)"                   .
             \"%#StatusLineNC#%{&ff=='unix'?'':&ff.'\ format'}%*" .
             \"%{'$'[!&list]}"               .
