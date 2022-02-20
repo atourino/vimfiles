@@ -23,5 +23,6 @@ Plug 'vim-utils/vim-all'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'rhysd/clever-f.vim'
+Plug 'rafi/awesome-vim-colorschemes'
 
 call plug#end()
