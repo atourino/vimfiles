@@ -168,8 +168,7 @@ endif
 " Highlighting
 if &t_Co >= 256 || has('gui_running')
    set background=dark
-   colorscheme solarized
-   " colorscheme seti
+   colorscheme nord
 endif
 
 if &t_Co > 2 || has('gui_running')
