@@ -8,10 +8,7 @@ have at it.
 
 ## Installation
 
-  `curl https://raw.github.com/atourino/vimfiles/master/bootstrap.sh -o - | sh`
-
-Yeah, security concerns and yada yada. Look at the file. It's four lines long.
-If you don't trust me then look at the source before installing. ;)
+  `curl -LJ0 https://raw.github.com/atourino/vimfiles/master/bootstrap.sh | sh`
 
 ## Inspiration
 
