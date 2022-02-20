@@ -7,9 +7,6 @@ let mapleader = "\<Space>"
 " Plugin settings
 " ===============
 
-" Supertab
-let g:SuperTabDefaultCompletionType = "context"
-
 " Vim search pulse
 let g:vim_search_pulse_mode = 'pattern'
 
@@ -19,17 +16,6 @@ nmap s <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-
-function! BufList()
-  redir => ls
-  silent ls
-  redir END
-  return split(ls, '\n')
-endfunction
-
-function! BufOpen(e)
-  execute 'buffer '. matchstr(a:e, '^[ 0-9]*')
-endfunction
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -146,26 +132,6 @@ xnoremap <silent> <C-l> >gv
 xnoremap < <gv
 xnoremap > >gv
 
-" Always display the status line and format it
-set laststatus=2
-if has('statusline')
-  function! SetStatusLineStyle()
-    let &stl="%f %y "                       .
-            \"%([%R%M]%)"                   .
-            \"%#StatusLineNC#%{&ff=='unix'?'':&ff.'\ format'}%*" .
-            \"%{'$'[!&list]}"               .
-            \"%{'~'[&pm=='']}"              .
-            \"%{exists('g:loaded_fugitive')?fugitive#statusline():''}" .
-            \"%="                           .
-            \"#%n %l/%L,%c%V "
-  endfunc
-  call SetStatusLineStyle()
-
-  if has('title')
-    set titlestring=%t%(\ [%R%M]%)
-  endif
-endif
-
 " Highlighting
 if &t_Co >= 256 || has('gui_running')
    set background=dark
@@ -176,18 +142,8 @@ if &t_Co > 2 || has('gui_running')
    syntax on                    " switch syntax highlighting on, when the terminal has colors
 endif
 
-" Highlight column 80. Used in certain style guidelines
-if exists('+colorcolumn')
-    set colorcolumn=80
-else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
-
 " No Help, please
 nmap <F1> <Esc>
-
-" Sort CSS
-map <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:let @/=''<CR>
 
 " Clean whitespace
 function! <SID>StripTrailingWhitespaces()
