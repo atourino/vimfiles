@@ -8,7 +8,10 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
+if executable('git')
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
+endif
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -24,5 +27,12 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'rhysd/clever-f.vim'
 Plug 'jacoborus/tender.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'yangmillstheory/vim-snipe'
+
+" Always load last.
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()

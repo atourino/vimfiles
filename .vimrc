@@ -1,6 +1,7 @@
 
 source ~/.vim/bundles.vim
 
+" Map space as leader key
 let mapleader = "\<Space>"
 
 
@@ -24,6 +25,30 @@ let g:airline_theme = 'tender'
 " Investigate.vim
 let g:investigate_use_dash = 1
 nnoremap <leader>K :call investigate#Investigate()<CR>
+
+" fzf/skim bindings
+nnoremap <silent> <leader>o :Files<CR>
+nnoremap <silent> <leader>O :Buffers<CR>
+nnoremap <silent> <leader>A :Windows<CR>
+
+" Vim snipe
+map <leader><leader>f <Plug>(snipe-f)
+map <leader><leader>F <Plug>(snipe-F)
+map <leader><leader>T <Plug>(snipe-T)
+map <leader><leader>w <Plug>(snipe-w)
+map <leader><leader>W <Plug>(snipe-W)
+map <leader><leader>e <Plug>(snipe-e)
+map <leader><leader>E <Plug>(snipe-E)
+map <leader><leader>b <Plug>(snipe-b)
+map <leader><leader>B <Plug>(snipe-B)
+map <leader><leader>ge <Plug>(snipe-ge)
+map <leader><leader>gE <Plug>(snipe-gE)
+nmap <leader><leader>r <Plug>(snipe-f-r)
+nmap <leader><leader>R <Plug>(snipe-F-r)
+
+let g:snipe_highlight_gui_color = '#fabd2f'
+let g:snipe_highlight_cterm256_color = '200'
+let g:snipe_highlight_cterm_color = '7'
 
 " General Customizations
 " ======================
@@ -50,11 +75,8 @@ set pastetoggle=<F2>           " When in insert mode, press <F2> to go to
                                "    paste mode, where you can paste mass data
                                "    that won't be autoindented
 set number                     " Enable line numbering
-set ruler                      " Show the line and column number of the cursor position, separated by a comma.
 set scrolloff=5                " Keep at least 5 lines above/below
-set showcmd                    " Display incomplete commands on last line of screen
 set showmatch                  " Show matching brackets (jump to the matching one)
-set showmode                   " Display whether on insert, replace, or visual mode
 set sidescrolloff=5            " Keep at least 5 lines left/right
 set title                      " Sets the terminal's title
 set undolevels=1000            " 1000 undos
@@ -67,6 +89,9 @@ set nocursorcolumn
 set nocursorline
 set norelativenumber
 syntax sync minlines=256
+
+set noshowcmd                  " Display incomplete commands on last line of screen
+set noshowmode                 " Display whether on insert, replace, or visual mode
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
@@ -131,6 +156,9 @@ xnoremap <silent> <C-h> <gv
 xnoremap <silent> <C-l> >gv
 xnoremap < <gv
 xnoremap > >gv
+
+" Add a semicolon to the current line without moving the cursor with <Leader>;
+nnoremap <Leader>; m'A;<ESC>`'
 
 " Highlighting
 if &t_Co >= 256 || has('gui_running')
