@@ -31,27 +31,6 @@ nnoremap <silent> <leader>o :Files<CR>
 nnoremap <silent> <leader>O :Buffers<CR>
 nnoremap <silent> <leader>A :Windows<CR>
 
-" Vim snipe
-map <leader><leader>f <Plug>(snipe-f)
-map <leader><leader>F <Plug>(snipe-F)
-map <leader><leader>T <Plug>(snipe-T)
-map <leader><leader>w <Plug>(snipe-w)
-map <leader><leader>W <Plug>(snipe-W)
-map <leader><leader>e <Plug>(snipe-e)
-map <leader><leader>E <Plug>(snipe-E)
-map <leader><leader>b <Plug>(snipe-b)
-map <leader><leader>B <Plug>(snipe-B)
-map <leader><leader>ge <Plug>(snipe-ge)
-map <leader><leader>gE <Plug>(snipe-gE)
-nmap <leader><leader>r <Plug>(snipe-f-r)
-nmap <leader><leader>R <Plug>(snipe-F-r)
-
-let g:snipe_highlight_gui_color = '#fabd2f'
-let g:snipe_highlight_cterm256_color = '200'
-let g:snipe_highlight_cterm_color = '7'
-
-hi default SmartMotionHL1Default guibg=#000000 ctermbg=1
-
 " General Customizations
 " ======================
 
@@ -143,18 +122,6 @@ nnoremap k gk
 " <tab> / <s-tab> | Circular windows navigation
 nnoremap <tab>   <c-w>w
 nnoremap <S-tab> <c-w>W
-
-" Moving lines
-nnoremap <silent> <C-k> :execute ':move '.max([0,         line('.') - 2])<cr>
-nnoremap <silent> <C-j> :execute ':move '.min([line('$'), line('.') + 1])<cr>
-nnoremap <silent> <C-h> <<
-nnoremap <silent> <C-l> >>
-xnoremap <silent> <C-k> :<C-U>execute 'normal! gv:move '.max([0,         line("'<") - 2])."\n"<cr>gv
-xnoremap <silent> <C-j> :<C-U>execute 'normal! gv:move '.min([line('$'), line("'>") + 1])."\n"<cr>gv
-xnoremap <silent> <C-h> <gv
-xnoremap <silent> <C-l> >gv
-xnoremap < <gv
-xnoremap > >gv
 
 " Add a semicolon to the current line without moving the cursor with <Leader>;
 nnoremap <Leader>; m'A;<ESC>`'

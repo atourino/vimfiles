@@ -30,7 +30,6 @@ Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'yangmillstheory/vim-snipe'
 
 " Always load last.
 Plug 'ryanoasis/vim-devicons'
