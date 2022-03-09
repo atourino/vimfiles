@@ -20,7 +20,7 @@ map <Leader>k <Plug>(easymotion-k)
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tender'
+let g:airline_theme = 'gruvbox'
 
 " Investigate.vim
 let g:investigate_use_dash = 1
@@ -50,6 +50,8 @@ let g:snipe_highlight_gui_color = '#fabd2f'
 let g:snipe_highlight_cterm256_color = '200'
 let g:snipe_highlight_cterm_color = '7'
 
+hi default SmartMotionHL1Default guibg=#000000 ctermbg=1
+
 " General Customizations
 " ======================
 
@@ -71,9 +73,6 @@ set nobackup                   " Don't back anything up. Use git.
 set nowritebackup              " Ditto
 set noswapfile                 " Disable swap files: because I like living on the edge...
 set numberwidth=5              " Width of number column
-set pastetoggle=<F2>           " When in insert mode, press <F2> to go to
-                               "    paste mode, where you can paste mass data
-                               "    that won't be autoindented
 set number                     " Enable line numbering
 set scrolloff=5                " Keep at least 5 lines above/below
 set showmatch                  " Show matching brackets (jump to the matching one)
@@ -162,12 +161,15 @@ nnoremap <Leader>; m'A;<ESC>`'
 
 " Highlighting
 if &t_Co >= 256 || has('gui_running')
-   set background=dark
-   colorscheme tender
+    set background=dark
+    colorscheme gruvbox
+    if (has("termguicolors"))
+        set termguicolors
+    endif
 endif
 
 if &t_Co > 2 || has('gui_running')
-   syntax on                    " switch syntax highlighting on, when the terminal has colors
+    syntax enable                    " switch syntax highlighting on, when the terminal has colors
 endif
 
 " No Help, please

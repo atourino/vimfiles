@@ -26,7 +26,7 @@ Plug 'vim-utils/vim-all'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'rhysd/clever-f.vim'
-Plug 'jacoborus/tender.vim'
+Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
