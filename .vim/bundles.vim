@@ -21,7 +21,6 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
 Plug 'inside/vim-search-pulse'
-Plug 'Keithbsmiley/investigate.vim'
 Plug 'vim-utils/vim-all'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -30,6 +29,7 @@ Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'rizzatti/dash.vim'
 
 " Always load last.
 Plug 'ryanoasis/vim-devicons'

@@ -22,14 +22,13 @@ map <Leader>k <Plug>(easymotion-k)
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'gruvbox'
 
-" Investigate.vim
-let g:investigate_use_dash = 1
-nnoremap <leader>K :call investigate#Investigate()<CR>
-
 " fzf/skim bindings
 nnoremap <silent> <leader>o :Files<CR>
 nnoremap <silent> <leader>O :Buffers<CR>
 nnoremap <silent> <leader>A :Windows<CR>
+
+" Dash.vim
+nmap <silent> <leader>d <Plug>DashSearch
 
 " General Customizations
 " ======================
