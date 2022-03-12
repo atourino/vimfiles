@@ -52,6 +52,7 @@ set nowritebackup              " Ditto
 set noswapfile                 " Disable swap files: because I like living on the edge...
 set numberwidth=5              " Width of number column
 set number                     " Enable line numbering
+set relativenumber             " Enable relative line numbering
 set scrolloff=5                " Keep at least 5 lines above/below
 set showmatch                  " Show matching brackets (jump to the matching one)
 set sidescrolloff=5            " Keep at least 5 lines left/right
@@ -64,7 +65,6 @@ set splitright
 set splitbelow
 set nocursorcolumn
 set nocursorline
-set norelativenumber
 syntax sync minlines=256
 
 set noshowcmd                  " Display incomplete commands on last line of screen
